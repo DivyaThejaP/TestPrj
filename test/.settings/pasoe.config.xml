@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<PASOEConfigDetails version="11.7ALPHA">
+<webapp>test</webapp>
+<servers>
+<server>myrealm in nbhyddpachipu10.myrealm (Progress Application Server for OpenEdge 11.7ALPHA)</server>
+</servers>
+</PASOEConfigDetails>
