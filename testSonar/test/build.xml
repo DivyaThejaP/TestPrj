@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="CI_OE" default="sonar" basedir=".">
+
+<property environment="env" />
+	<property file="build.properties"/>  
+	
+<property name="PROJECTHOME" value="C:/Progress/OpenEdge117/oeide/eclipse/plugins/com.progress.openedge.pdt.abldoc.core_${version}"/>	
+	
+	<!--Sonar -->
+	<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
+	<!--<property name="sonar.host.url" value="http://172.21.32.73:9000" />-->
+	<property name="sonar.host.url" value="http://localhost:9000" />
+
+	 
+	<!-- Define the SonarQube project properties -->
+	<property name="sonar.projectKey" value="OEPrj" />
+	<property name="sonar.projectName" value="OEPrj" />
+	<property name="sonar.projectVersion" value="1.0" />
+	<property name="sonar.sources" value="." />
+	<property name="sonar.java.binaries" value="." />
+	<property name="sonar.java.libraries" value="lib/*.jar" />
+	<property name="sonar.language" value="oe" />
+<!-- Target for defining 'taskdef' -->
+<target name="taskdef">		
+	  <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+	            <!-- Update the following line, or put the "sonarqube-ant-task-*.jar" file in your "$HOME/.ant/lib" folder 
+	            <classpath path="C:/Theja/Work/OpenEdge/11.4/sonarqube-ant-task-2.5.jar" />-->
+	        </taskdef>
+	<typedef resource="types.properties" />
+</target>
+
+	
+
+
+	<!-- Define SonarQube Scanner for Ant Target -->
+	<target name="sonar1">
+	    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+	        <!-- Update the following line, or put the "sonarqube-ant-task-*.jar" file in your "$HOME/.ant/lib" folder 
+	        <classpath path="C:\Theja\Work\OpenEdge\11.4\sonarqube-ant-task-2.5.jar" /> -->
+	    </taskdef>
+	 
+	    <!-- Execute SonarQube Scanner for Ant Analysis -->
+<!--      <sonar:sonar /> -->
+<sonar:sonar xmlns:sonar="antlib:org.sonar.ant">
+
+</sonar:sonar>
+	</target>
+	
+	<target name="sonar" >
+	            <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+	                <!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
+	                <!--<classpath path="path/to/sonar/ant/task/lib/sonarqube-ant-task-*.jar" />-->
+	            	<classpath path="C:\Theja\Work\OpenEdge\11.4\sonarqube-ant-task-2.5.jar" />
+	            </taskdef>
+	            
+	            <!-- Execute SonarQube Scanner for Ant Analysis -->
+		<sonar:sonar xmlns:sonar="antlib:org.sonar.ant">
+	            </sonar:sonar>
+	        </target>
+	
+	
+	
+	
+</project>
+
